@@ -4,6 +4,8 @@ Server and Fan Management System - FULL AI CONTROL
 AI has full control with no restrictions.
 Optimizes aggressively for maximum efficiency.
 """
+from utils.phone_server import PhoneServer
+from utils.adb_manager import get_connected_devices
 
 from typing import Dict, List, Tuple
 from dataclasses import dataclass
