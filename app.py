@@ -6,6 +6,7 @@ Resource Optimization and Efficiency Prediction Dashboard
 - 10 temperature lines in single graph
 """
 
+
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -22,6 +23,12 @@ from utils.server_manager import ServerManager
 from utils.alarm import AlarmSystem
 
 # Page config
+st.header("Phone Servers Metrics")
+for idx, phone in enumerate(server_manager.phone_servers):
+    st.subheader(f"Phone Server {idx + 1}")
+    st.metric("Temperature", f"{phone.get_temperature()} °C")
+    st.metric("Battery", f"{phone.get_battery()} %")
+    st.text(f"Status: {phone.state}")
 st.set_page_config(
     page_title="Resource Optimization & Efficiency Prediction",
     page_icon="🖥️",
